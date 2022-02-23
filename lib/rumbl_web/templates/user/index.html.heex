@@ -3,8 +3,8 @@
 <table class="table">
     <%= for user <- @users do %>
         <tr>
-            <%= render "user.html", user: user %>
-            <td><%= link "View", to: "/users", method: :get %></td>
+            <td><%= render "user.html", user: user %></td>
+            <td><%= link "View", to: "/users/#{user.id}", method: :get %></td>
         </tr>
     <% end %>
 </table>
