@@ -1,4 +1,4 @@
-defmodule RumblWeb.Controllers.UserController do
+defmodule RumblWeb.UserController do
   use RumblWeb, :controller
 
   def index(conn, _params) do

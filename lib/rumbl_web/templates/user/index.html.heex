@@ -2,6 +2,9 @@
 
 <table class="table">
     <%= for user <- @users do %>
-        
+        <tr>
+            <td><b><%= first_name(user) %></b> (<%= user.id %>)</td>
+            <td><%= link "View", to: "/users", method: :get %></td>
+        </tr>
     <% end %>
 </table>
