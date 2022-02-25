@@ -1,5 +1,6 @@
 defmodule RumblWeb.Models.User do
   use Ecto.Schema
+  import Ecto.Changeset
 
   schema "users" do
     field(:name, :string)
@@ -9,4 +10,9 @@ defmodule RumblWeb.Models.User do
     timestamps()
   end
 
+  def changeset(model, params \\ :empty) do
+    model
+    |> cast(params, ~w(name username), [])
+    |> validate_length(:username, min: 1, max: 20)
+  end
 end
